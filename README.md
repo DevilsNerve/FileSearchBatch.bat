@@ -1,37 +1,58 @@
 # File Search Batch Script
 
-This batch script allows users to search for files in a directory based on a specified file type, date range, and keyword. It provides a convenient way to locate files that match specific criteria within a given directory.
+This batch script allows the user to search for files in a directory based on a specified file type, date range, and keyword. It provides a convenient way to locate files that match specific criteria within a given directory. Please note that this script is provided as-is and should be used at your own discretion.
 
-## Code Explanation
+## Usage
 
-The provided batch script includes comments to explain each section of the code. Here is a breakdown of its functionality:
+1. Make sure you have a Windows operating system installed.
+2. Open a text editor and create a new file.
+3. Copy the contents of the batch script into the newly created file.
+4. Save the file with a `.bat` extension, for example, `file_search.bat`.
+5. Double-click on the saved `.bat` file to execute the script.
 
-- The script starts with the `@echo off` command to turn off command echoing, ensuring that the commands executed in the script are not displayed in the command prompt.
-- The `title Created by Austen Green` command sets the title of the command prompt window.
-- The `setlocal` command limits the scope of variable changes to the current batch script.
-- The script prompts the user to enter the search directory, file type, start date, end date, and keyword using the `set /p` command. The user's input is assigned to corresponding variables.
-- The `start_time` variable is set to the current time using the `%time%` system variable.
-- A `for` loop searches for files in the specified directory and file type. It uses the `findstr` command to search for the keyword within the file contents. If the keyword is found, the file path is printed. If the keyword is not found in the file contents, the file path is checked again using `findstr` to search for the keyword in the file name. If the keyword is found, the file path is printed.
-- The `end_time` variable is set to the current time using the `%time%` system variable.
-- The `time_diff` variable is calculated by converting the start and end times to seconds and subtracting them.
-- The script prints a message indicating that the search is complete and displays the time taken to complete the search using the `echo` command. The `pause` command keeps the command prompt window open until the user presses a key.
+## Script Explanation
+
+The script contains the following sections and features:
+
+### 1. Echo Off and Title
+
+The `@echo off` command turns off the command echo so that the commands executed in the script are not displayed in the command prompt. The `title Created by Austen Green` sets the title of the command prompt window.
+
+### 2. Variables and Input Prompts
+
+The `setlocal` command limits the scope of variable changes to the current batch script. The script prompts the user to enter the search directory, file type, start date, end date, and keyword using the `set /p` command. These values are assigned to variables for further use in the script.
+
+### 3. File Search
+
+The script uses a `for` loop to search for files in the specified directory and file type. It utilizes the `findstr` command to search for the keyword in the file contents. If the keyword is found, the file path is printed. If the keyword is not found in the file contents, the file path is checked again using the `findstr` command to search for the keyword in the file name. If the keyword is found, the file path is printed.
+
+### 4. Time Calculation
+
+The script calculates the time taken to complete the search. It records the start and end times, converts them to seconds, and calculates the time difference.
+
+### 5. Search Completion Message
+
+After the search is complete, a message is displayed indicating the completion of the search and the time taken to complete it. The `pause` command keeps the command prompt window open until the user presses a key.
 
 ## Example Usage
 
-To use the batch script, follow these steps:
+An example usage is provided within the script as comments. It demonstrates how to enter the search directory, file type, date range, and keyword. Modify the example usage to fit your specific search criteria.
 
-1. Save the script with a `.bat` file extension (e.g., `file_search.bat`).
-2. Open a command prompt window and navigate to the directory where the script is saved.
-3. Run the script by entering its filename (e.g., `file_search.bat`).
-4. Follow the prompts and enter the required information:
-   - Enter the search directory (e.g., `C:\Users\JohnDoe\Documents`).
-   - Enter the file type to search (e.g., `*.docx`).
-   - Enter the start date for the search in the format MM/DD/YYYY (e.g., `01/01/2021`).
-   - Enter the end date for the search in the format MM/DD/YYYY (e.g., `12/31/2021`).
-   - Enter the keyword to search for (e.g., `confidential`).
-5. The script will search for files that match the specified criteria and display the file paths. It will also provide the time taken to complete the search.
+## License
 
-Please note that this script is designed to be executed in a Windows command prompt environment.
+This batch script is provided under the following license:
 
-Feel free to customize and integrate this script into your workflow to enhance file search capabilities.
+```
+MIT License
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this script, to deal in the script without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the script, and to permit persons to whom the script is furnished to do so, subject to the following conditions:
+
+The script is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the script or the use or other dealings in the script.
+
+By using this script, you agree to release Austen Green from any responsibility or liability for its usage.
+
+```
+
+Feel free to modify or adapt the script according to your needs. However, please note that the author, Austen Green, is not responsible for any consequences or damages resulting from
+
+ the use of this script. Use it at your own risk.
